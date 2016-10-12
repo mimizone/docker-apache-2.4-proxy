@@ -9,7 +9,7 @@ RUN apt-get update && \
 
 RUN a2enmod proxy_http proxy_ajp proxy_balancer proxy_wstunnel rewrite headers
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
-ADD vhost-default.conf /etc/apache2/sites-available/default
+ADD vhost-default.conf /etc/apache2/sites-available/000-default.conf
 RUN mkdir /www /conf
 ADD proxy.conf /conf
 ADD run.sh /run.sh
